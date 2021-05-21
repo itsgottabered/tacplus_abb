@@ -15,5 +15,8 @@ RUN apt-get update && \
     apt install -y tacacs+ && \
     apt-get clean
 
+COPY startup.sh /usr/local/bin/startup.sh
+RUN chmod +x /usr/local/bin/startup.sh
+
 EXPOSE 49
-ENTRYPOINT service tacacs_plus restart && bash
+ENTRYPOINT /usr/local/bin/startup.sh && bash
