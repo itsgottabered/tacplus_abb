@@ -5,14 +5,9 @@ FROM ubuntu:bionic
 # Default Tacacs_Plud directoty inside container /etc/tacacs+
 # Default Config File inside container /etc/tacacs+/tac_plus.conf
 #
-# Command to run the container mapping external tacacs config file
-#
-# docker run -td --name tacplus \
-#            -v <tacplus local config with path>:/etc/tacacs+/tac_plus.conf \
-#           tacplus
 
 RUN apt-get update && \
-    apt install -y tacacs+ && \
+    apt-get install -y tacacs+ rsyslog && \
     apt-get clean
 
 COPY startup.sh /usr/local/bin/startup.sh
