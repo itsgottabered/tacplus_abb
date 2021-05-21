@@ -6,5 +6,5 @@ services:
       volumes:
         - './config/tac_plus.conf:/etc/tacacs+/tac_plus.conf'
       ports:
-        - 49:49
+        - 49:49/tcp
       tty: true
