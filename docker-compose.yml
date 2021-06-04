@@ -4,7 +4,7 @@ services:
       build:
         context: .
       volumes:
-        - './config/tac_plus.conf:/etc/tacacs+/tac_plus.conf'
+        - './config/tac_plus.cfg:/usr/local/etc/tac_plus.cfg'
       ports:
         - 49:49/tcp
       tty: true
